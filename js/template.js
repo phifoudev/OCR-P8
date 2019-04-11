@@ -59,10 +59,9 @@
 		* });
 		*/
 		show(data) {
-			var i, l;
 			var view = '';
 
-			for (i = 0, l = data.length; i < l; i++) {
+			for (let i = 0, l = data.length; i < l; i++) {
 				var template = this.defaultTemplate;
 				var completed = '';
 				var checked = '';
@@ -77,7 +76,7 @@
 				template = template.replace('{{completed}}', completed);
 				template = template.replace('{{checked}}', checked);
 
-				view = view + template;
+				view += template;
 			}
 
 			return view;
