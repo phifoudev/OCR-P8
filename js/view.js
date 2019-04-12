@@ -141,7 +141,7 @@
 
 		_bindItemEditDone(handler) {
 			var self = this;
-			$delegate(self.$todoList, 'li .edit', 'blur', () => {
+			$delegate(self.$todoList, 'li .edit', 'blur', function () {
 				if (!this.dataset.iscanceled) {
 					handler({
 						id: self._itemId(this),
@@ -150,7 +150,7 @@
 				}
 			});
 
-			$delegate(self.$todoList, 'li .edit', 'keypress', event => {
+			$delegate(self.$todoList, 'li .edit', 'keypress', function (event) {
 				if (event.keyCode === self.ENTER_KEY) {
 					// Remove the cursor from the input when you hit enter just like if it
 					// were a real form
