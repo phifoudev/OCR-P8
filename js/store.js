@@ -80,7 +80,7 @@
 
 			callback = callback || function () {};
 
-			// Generate a unique= ID with Date
+			// Generate a unique ID
 			var newId = Date.now();
 
 			// If an ID was actually given, find the item and update each property
