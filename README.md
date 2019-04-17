@@ -1,5 +1,6 @@
 ﻿# OCR-P8
 
-Résumé application
+L'application todos permet à l'utilisateur de créer une liste de tâches
 
-Mettre lien Wiki
+
+https://github.com/phifoudev/OCR-P8/wiki
