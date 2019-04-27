@@ -100,6 +100,18 @@ describe('controller', function () {
 			expect(view.render).toHaveBeenCalledWith('showEntries', todo);
 		});
 
+		it('NEW: should read active entries', function () {
+			// Test NEW
+			var todo = [{id: 1, title: 'my todo1', completed: false}, 
+						{id: 2, title: 'my todo2', completed: true}];
+
+			setUpModel(todo);
+
+			subject.setView('#/active');
+
+			expect(model.read).toHaveBeenCalledWith({completed: false}, jasmine.any(Function));
+		});
+
 		it('should show completed entries', function () {
 			// Test OK
 			var todo = [{id: 1, title: 'my todo1', completed: false}, 
@@ -110,6 +122,18 @@ describe('controller', function () {
 			subject.setView('#/completed');
 
 			expect(view.render).toHaveBeenCalledWith('showEntries', todo);
+		});
+
+		it('NEW: should read completed entries', function () {
+			// Test NEW
+			var todo = [{id: 1, title: 'my todo1', completed: false}, 
+						{id: 2, title: 'my todo2', completed: true}];
+
+			setUpModel(todo);
+
+			subject.setView('#/completed');
+
+			expect(model.read).toHaveBeenCalledWith({completed: true}, jasmine.any(Function));
 		});
 	});
 
